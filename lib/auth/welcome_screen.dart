@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
                     text: const TextSpan(
                       children: [
                         TextSpan(
-                            text: 'Reserve & Relish ! \n',
+                            text: 'Reserve & Relish! \n',
                             style: TextStyle(
                               fontSize: 41.0,
                               color: Color(0xFF2C1812),

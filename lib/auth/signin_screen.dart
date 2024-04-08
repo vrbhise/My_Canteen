@@ -10,10 +10,18 @@ class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
   @override
+  void dispose()
+  {
+    super.dispose();
+    _email.dispose();
+    _password.dispose();
+  }
   State<SignInScreen> createState() => _SignInScreenState();
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final _email = TextEditingController();
+  final _password = TextEditingController();
   final _formSignInKey = GlobalKey<FormState>();
   bool rememberPassword = true;
   @override
@@ -64,6 +72,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         },
                         decoration: InputDecoration(
                           label: const Text('Email'),
+                          controller: _email,
                           hintText: 'Enter Email',
                           hintStyle: const TextStyle(
                             color: Colors.black26,
@@ -96,6 +105,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         },
                         decoration: InputDecoration(
                           label: const Text('Password'),
+                          controller: _password,
                           hintText: 'Enter Password',
                           hintStyle: const TextStyle(
                             color: Colors.black26,
@@ -162,6 +172,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Text('Login successful'),
+                            
                                 ),
                               );
                               Navigator.push(

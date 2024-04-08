@@ -1,3 +1,4 @@
+import 'package:canteen_final/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 //import 'package:icons_plus/icons_plus.dart';
 import 'package:canteen_final/screens/signin_screen.dart';
@@ -12,6 +13,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final _auth = AuthService();
   final _formSignupKey = GlobalKey<FormState>();
   bool agreePersonalData = true;
   @override
@@ -184,8 +186,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {
-                            if (_formSignupKey.currentState!.validate() &&
+                          onPressed:()  
+                            { _signup;
+                              if (_formSignupKey.currentState!.validate() &&
                                 agreePersonalData) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -273,7 +276,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (e) => const SignInScreen(),
+                                  builder: (context) => const SignInScreen(),
                                 ),
                               );
                             },
@@ -299,5 +302,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ],
       ),
     );
+    _signup()async{
+      final user = 
+      await _auth.createUserWithEmailAndPassword( _email.text, _password.text);
+      if(user !=null){
+        log("user created successfully");
+        goToHome(context);
+      }
+    }
   }
 }
+
