@@ -1,6 +1,8 @@
 
 
 
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService{
@@ -15,7 +17,7 @@ return cred.user;
     }
     return null;
   }
-  Future<void> signout(){
+  Future<void> signout()async{
     try{
       await _auth.signOut();
     }catch(e){log("something went wrong");}

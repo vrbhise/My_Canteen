@@ -20,8 +20,8 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  final _email = TextEditingController();
-  final _password = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
   final _formSignInKey = GlobalKey<FormState>();
   bool rememberPassword = true;
   @override
@@ -70,9 +70,10 @@ class _SignInScreenState extends State<SignInScreen> {
                           }
                           return null;
                         },
+                        
                         decoration: InputDecoration(
                           label: const Text('Email'),
-                          controller: _email,
+                          controller : _email,
                           hintText: 'Enter Email',
                           hintStyle: const TextStyle(
                             color: Colors.black26,
@@ -124,6 +125,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ),
                       ),
+  
                       const SizedBox(
                         height: 25.0,
                       ),
