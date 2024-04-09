@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:canteen_final/screens/signin_screen.dart';
-import 'package:canteen_final/screens/signup_screen.dart';
+import 'package:canteen_final/auth/signin_screen.dart';
+import 'package:canteen_final/auth/signup_screen.dart';
 import 'package:canteen_final/theme/theme.dart';
 import 'package:canteen_final/widgets/custom_scaffold.dart';
 import 'package:canteen_final/widgets/welcome_button.dart';

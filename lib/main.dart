@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:canteen_final/screens/welcome_screen.dart';
+import 'package:canteen_final/auth/welcome_screen.dart';
 import 'package:canteen_final/theme/theme.dart';
 
 void main()  {

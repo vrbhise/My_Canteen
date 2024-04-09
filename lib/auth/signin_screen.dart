@@ -1,7 +1,7 @@
 import 'package:canteen_final/screens/selection_screen.dart';
 import 'package:flutter/material.dart';
 //import 'package:icons_plus/icons_plus.dart';
-import 'package:canteen_final/screens/signup_screen.dart';
+import 'package:canteen_final/auth/signup_screen.dart';
 import 'package:canteen_final/theme/theme.dart';
 import 'package:canteen_final/widgets/custom_scaffold.dart';
 import 'package:canteen_final/screens/selection_screen.dart';
